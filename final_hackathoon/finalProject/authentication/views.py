@@ -113,7 +113,10 @@ def signin(request):
     return render(request, "authentication/signin.html")
 
 
-
+def signout(request):
+    logout(request)
+    messages.success(request, "Logged Out Successfully!")
+    return redirect('home')
 
 
 def activate(request, uidb64, token):
